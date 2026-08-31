@@ -6,5 +6,5 @@ Esse repositório servirá para a realização de atividades práticas de sistem
 
 Conceitos estudados:
 
-- Serialização e desserialização
-- Formatos: CSV, JSON, XML, YAML e TOML
+- [Serialização e desserialização](serializacao/README.md)
+- [API REST](rest/README.md)
