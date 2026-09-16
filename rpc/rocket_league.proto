@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package rocketleague;
+
+// Serviço gRPC do Rocket League
+service RocketLeagueService {
+  // Chamada Unary: Registra um novo jogador no sistema
+  rpc RegistrarJogador (JogadorRequest) returns (JogadorResponse);
+
+  // Chamada Unary: Envia o relatório final de estatísticas de uma partida
+  rpc EnviarEstatisticaPartida (PartidaStatsRequest) returns (ConfirmacaoResponse);
+
+  // Chamada Server Streaming: Transmite telemetria e placar em tempo real
+  rpc AcompanharPartidaAoVivo (PartidaStreamRequest) returns (stream TelemetriaPartida);
+}
+
+// Mensagens para Cadastro de Jogador
+message JogadorRequest {
+  string nickname = 1;
+  string carro = 2;       // Ex: Octane, Fennec, Dominus
+  string plataforma = 3;  // Ex: Steam, PS5, Xbox, Switch
+  
+  // Evolução compatível: novo campo adicionado sem quebrar clientes legados
+  int32 nivel_xp = 4;     
+}
+
+message JogadorResponse {
+  int32 jogador_id = 1;
+  string mensagem = 2;
+}
+
+// Mensagens para Estatísticas de Partida
+message PartidaStatsRequest {
+  int32 jogador_id = 1;
+  int32 gols = 2;
+  int32 assistencias = 3;
+  int32 defesas = 4;
+  string resultado = 5;   // Ex: "vitoria", "derrota"
+  
+  // Evolução compatível: novo campo adicionado com nova tag
+  string temporada = 6;   // Ex: "Season 14"
+}
+
+message ConfirmacaoResponse {
+  bool sucesso = 1;
+  string detalhe = 2;
+}
+
+// Mensagens para Streaming de Telemetria em Tempo Real
+message PartidaStreamRequest {
+  int32 partida_id = 1;
+}
+
+message TelemetriaPartida {
+  int32 segundo = 1;
+  int32 placar_azul = 2;
+  int32 placar_laranja = 3;
+  string ultimo_evento = 4;
+}
