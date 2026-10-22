@@ -11,3 +11,4 @@ Conceitos estudados:
 - [MQTT](mqtt/README.md)
 - [RPC](rpc/README.md)
 - [Modelos de falhas e segurança](modelos-de-falhas-e-seguranca/README.md)
+- [Blockchain](blockchain/README.md)
