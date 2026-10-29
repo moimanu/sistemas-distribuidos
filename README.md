@@ -12,3 +12,4 @@ Conceitos estudados:
 - [RPC](rpc/README.md)
 - [Modelos de falhas e segurança](modelos-de-falhas-e-seguranca/README.md)
 - [Blockchain](blockchain/README.md)
+- [Blockchain Didática](blockchain-didatica/README.md)
