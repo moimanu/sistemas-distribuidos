@@ -13,3 +13,4 @@ Conceitos estudados:
 - [Modelos de falhas e segurança](modelos-de-falhas-e-seguranca/README.md)
 - [Blockchain](blockchain/README.md)
 - [Blockchain Didática](blockchain-didatica/README.md)
+- [Contratos Inteligentes](contratos-inteligentes/README.md)
